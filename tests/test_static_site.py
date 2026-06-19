@@ -54,7 +54,7 @@ def test_static_site_has_required_pages_and_local_assets() -> None:
     assert "renderFairnessAudit" in app_script
     assert "renderWeatherReport" in app_script
     assert "Thời tiết ngoài trời theo địa điểm quay" in index
-    assert "datasets/weather/daily.csv" in data_page
+    assert "datasets/weather/daily.csv" not in data_page
     assert "Cách đọc p, q và độ lớn" in app_script
     assert "Ngưỡng thực dụng" in app_script
     assert "renderAuditVisualLog" in app_script

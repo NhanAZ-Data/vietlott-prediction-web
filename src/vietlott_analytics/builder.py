@@ -159,6 +159,31 @@ def _build_analysis_export(
         for path, details in snapshot_manifest.get("files", {}).items()
         if path.startswith(("draws/", "prizes/"))
     ]
+    source_files = {
+        "draws": "https://github.com/NhanAZ-Drops/vietlott-data-research/tree/main/datasets/draws",
+        "prizes": "https://github.com/NhanAZ-Drops/vietlott-data-research/tree/main/datasets/prizes",
+        "prediction_ledger": (
+            "https://github.com/NhanAZ-Drops/vietlott-prediction-web/blob/main/"
+            "predictions/ledger.jsonl"
+        ),
+        "implementation": (
+            "https://github.com/NhanAZ-Drops/vietlott-prediction-web/tree/main/"
+            "src/vietlott_analytics"
+        ),
+        "quality_report": (
+            "https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/"
+            "datasets/metadata/quality-report.json"
+        ),
+        "snapshot_manifest": (
+            "https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/"
+            "datasets/metadata/snapshot-manifest.json"
+        ),
+    }
+    if "weather/daily.csv" in snapshot_manifest.get("files", {}):
+        source_files["weather"] = (
+            "https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/"
+            "datasets/weather/daily.csv"
+        )
     return {
         "schema_version": 2,
         "export_type": "vietlott_research_analysis",
@@ -317,30 +342,7 @@ def _build_analysis_export(
                 ),
             },
         },
-        "source_files": {
-            "draws": "https://github.com/NhanAZ-Drops/vietlott-data-research/tree/main/datasets/draws",
-            "prizes": "https://github.com/NhanAZ-Drops/vietlott-data-research/tree/main/datasets/prizes",
-            "weather": (
-                "https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/"
-                "datasets/weather/daily.csv"
-            ),
-            "prediction_ledger": (
-                "https://github.com/NhanAZ-Drops/vietlott-prediction-web/blob/main/"
-                "predictions/ledger.jsonl"
-            ),
-            "implementation": (
-                "https://github.com/NhanAZ-Drops/vietlott-prediction-web/tree/main/"
-                "src/vietlott_analytics"
-            ),
-            "quality_report": (
-                "https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/"
-                "datasets/metadata/quality-report.json"
-            ),
-            "snapshot_manifest": (
-                "https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/"
-                "datasets/metadata/snapshot-manifest.json"
-            ),
-        },
+        "source_files": source_files,
         "raw_data_catalog": raw_catalog,
         "product_reports": {
             str(report["product"]["slug"]): report for report in product_reports

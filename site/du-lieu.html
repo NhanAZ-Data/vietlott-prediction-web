@@ -165,12 +165,6 @@
             <a href="https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/datasets/metadata/snapshot-manifest.json">
               <span>Manifest hash của snapshot</span><strong>snapshot-manifest.json</strong>
             </a>
-            <a href="https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/datasets/weather/daily.csv">
-              <span>CSV nhiệt độ và độ ẩm</span><strong>datasets/weather/daily.csv</strong>
-            </a>
-            <a href="https://github.com/NhanAZ-Drops/vietlott-data-research/blob/main/datasets/weather/metadata.json">
-              <span>Metadata khí tượng</span><strong>weather/metadata.json</strong>
-            </a>
             <a href="data/audit-summary.json">
               <span>Tóm tắt kiểm định</span><strong>audit-summary.json</strong>
             </a>
@@ -217,8 +211,8 @@ sample = draws.loc[draws["draw_status"] == "confirmed"].copy()</code></pre>
           </div>
           <p>
             Gói này không nhúng hàng trăm nghìn kỳ quay thô để tránh tạo một tệp quá
-            lớn. Trường <code>source_files</code> chỉ tới CSV kỳ quay, giải thưởng,
-            thời tiết và sổ dự đoán gốc. <code>raw_data_catalog</code> liệt kê từng tệp
+            lớn. Trường <code>source_files</code> chỉ tới CSV kỳ quay, giải thưởng
+            và sổ dự đoán gốc. <code>raw_data_catalog</code> liệt kê từng tệp
             dữ liệu thô cùng kích thước, số dòng và SHA-256. Gói được kiểm tra bằng
             <a href="data/analysis-export.schema.json"><code>analysis-export.schema.json</code></a>.
             AI nên đọc gói JSON trước để hiểu cấu trúc,

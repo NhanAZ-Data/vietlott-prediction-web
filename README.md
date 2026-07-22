@@ -1,5 +1,10 @@
 # Vietlott Prediction Web
 
+> **Dự án này đã được hợp nhất và lưu trữ.** Mã nguồn collector, snapshot dữ liệu,
+> phân tích, website và các workflow hiện được duy trì tại
+> [NhanAZ-Data/vietlott-research](https://github.com/NhanAZ-Data/vietlott-research).
+> Vui lòng dùng repo mới cho mọi clone, issue và đóng góp tiếp theo.
+
 Repo này chứa website tĩnh, phân tích, backtest và sổ dự đoán. Dữ liệu kết quả
 Vietlott không được thu thập ở repo này nữa; workflow build sẽ checkout snapshot
 canonical từ [NhanAZ-Data/vietlott-data-research](https://github.com/NhanAZ-Data/vietlott-data-research)
